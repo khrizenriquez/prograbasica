@@ -10,8 +10,14 @@ function Pokemon () {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+	var busqueda, objPokemon;
+	var urlImg = "http://assets2.pokemon.com/assets/cms2/img/pokedex/detail/#.png";
 	var msj = document.getElementById("mensajes");
 	var noPokemon = document.getElementById("numeroPokemon");
+	var numPokemon = document.getElementById("noPokemon");
+	var nombrePokemon = document.getElementById("nombrePokemon");
+	var tipoPokemon = document.getElementById("tipoPokemon");
+	var imgPokemon = document.querySelector("#imgPokemon figure img");
 	//		Escucho lo que el usuario ingresa por medio del botón ver
 	document.getElementById("btnVer").addEventListener("click", function () {
 		/*		Verifico lo que se ingreso en el texto, tiene que ser números,
@@ -23,9 +29,14 @@ document.addEventListener("DOMContentLoaded", function () {
 			} else {
 				//		Convierto el valor ingresado por el usuario a número
 				msj.textContent = "";
-				noPokemon.value = parseInt(noPokemon.value);
-				if (datosPokemon["" + noPokemon] !== undefined) {
-					console.log(datosPokemon["" + noPokemon]);
+				busqueda = parseInt(noPokemon.value);
+				if (datosPokemon["" + busqueda] !== undefined) {
+					objPokemon = datosPokemon["" + busqueda];
+					//		Lleno mis elementos HTML con lo obtenido
+					numPokemon.children[1].textContent = busqueda;
+					nombrePokemon.children[0].textContent = objPokemon.nombre;
+					tipoPokemon.children[0].textContent = objPokemon.tipo;
+					imgPokemon.setAttribute("src", urlImg.replace("#", agregaCeros("" + busqueda)));
 				} else 
 					msj.textContent = "No tenemos registrado un pokémon con ese número por ahora :(, pero puedes ingresarlo modificando el código desde github :D ";
 			}
@@ -34,6 +45,16 @@ document.addEventListener("DOMContentLoaded", function () {
 			msj.textContent = "Ingresa un número válido :(";
 		}
 	});
-	//		http://img.pokemondb.net/artwork/primeape.jpg
-	//		http://assets2.pokemon.com/assets/cms2/img/pokedex/detail/057.png
 });
+
+/*		Para el número de pokémon de las imagenes los necesito como 001, esta función agrega ceros 
+si es necesario al número que obtengo y lo retorno para hacer el llamado al enlace y obtener la imagen*/
+function agregaCeros (noPOke) {
+	if (noPOke.length === 1) 
+		noPOke = "00" + noPOke;
+	else
+	if (noPOke.length === 2) 
+		noPOke = "0" + noPOke;
+
+	return noPOke;
+}
