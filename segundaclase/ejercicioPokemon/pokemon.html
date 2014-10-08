@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Pokedex</title>
+		<link rel="stylesheet" href="pokeEstilo.css" />
+
+	</head>
+	<body>
+		<h1>Pokedex, (solo los primeros 151)</h1>
+
+		<section class="busquedaPokemon">
+			<form>
+				<input id="numeroPokemon" type="text" placeholder="Número del pokémon" />
+				<button id="btnVer" class="btn" type="button">Ver</button>
+				<div id="mensajes"></div>
+			</form>
+		</section>
+		
+		<section class="pokedex">
+			<div id="noPokemon">
+				<label>#</label><span>No. del pokémon</span>
+			</div>
+			<div id="nombrePokemon">
+				<h2>Nombre del pokémon</h2>
+			</div>
+			<div id="tipoPokemon">
+				<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, explicabo soluta eligendi sit eius! Provident libero ea quam, culpa, minus est, animi quos, eos alias maiores atque unde rerum deleniti.</span>
+			</div>
+			<div id="imgPokemon">
+				<figure>
+					<img src="" alt="" />
+				</figure>
+			</div>
+		</section>
+
+		<script src="datosPokemon.js"></script>
+		<script src="Pokemon.js"></script>
+	</body>
+</html>
