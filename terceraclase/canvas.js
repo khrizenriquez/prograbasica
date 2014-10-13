@@ -10,6 +10,7 @@ function inicio()
 
     lienzo.beginPath();
     lienzo.strokeStyle = "#00F";
+    //      Para crear un circulo completo
     lienzo.arc(150,150,100, (Math.PI * 2), false);
     lienzo.closePath();
     lienzo.stroke();
