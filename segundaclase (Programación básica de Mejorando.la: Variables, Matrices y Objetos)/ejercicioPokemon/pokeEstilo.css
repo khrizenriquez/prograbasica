@@ -1,0 +1,37 @@
+/*
+		Khriz Enríquez @khrizenriquez
+*/
+
+/*		Área de selectores universales*/
+body {
+	font-size: 16px;
+}
+h1 {
+	text-align: center;
+}
+
+section {
+	margin: 0 auto;
+	text-align: center;
+}
+/*		Área de selectores por id*/
+/*		Área de selectores por clase*/
+.busquedaPokemon {}
+.busquedaPokemon button {
+	background: #6b90d6;
+	color: white;
+}
+.busquedaPokemon button:hover {
+	cursor: pointer;
+}
+
+.busquedaPokemon input[type='text'], .busquedaPokemon button {
+	font-size: 20px;
+}
+.pokedex {
+	background: #d60d1a;
+	border: 1px solid black;
+	color: white;
+	text-align: left;
+	width: 600px;
+}
