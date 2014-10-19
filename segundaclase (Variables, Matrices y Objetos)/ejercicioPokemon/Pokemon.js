@@ -1,12 +1,10 @@
-/*
-		Khriz Enríquez @khrizenriquez
-*/
+/*		Khriz Enríquez @khrizenriquez*/
 function Pokemon () {
 	this.nombre = nombre;
 	this.vida = vida;
 	this.ataque = ataque;
 	this.defensa = defensa;
-	this.imagen = imagen
+	this.imagen = imagen;
 }
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -1,2 +1,0 @@
-Ejercicio donde por medio del número de pokémon que se ingrese aparecerá
-su información básica además de la imágen de dicho pokémon
